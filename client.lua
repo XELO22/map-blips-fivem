@@ -1,6 +1,5 @@
 Config                            = {}
 
-
 Config.Blipy = {
 	{
 		Pos     = vector3(-537.4, -176.97, 38.22),
@@ -34,16 +33,16 @@ ESX	= nil
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+		Citizen.Wait(1000)
 	end
 
 	while ESX.GetPlayerData().job == nil do
-		Citizen.Wait(10)
+		Citizen.Wait(2500)
 	end
 
 	
 	while ESX.GetPlayerData().job2 == nil do
-		Citizen.Wait(10)
+		Citizen.Wait(2500)
 	end
 
 	PlayerData = ESX.GetPlayerData()
@@ -55,7 +54,7 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(2)
+		Citizen.Wait(2500)
 		if hex == nil then
 			ESX.TriggerServerCallback('garages:getPlayerHex', function(h)
 				hex = h
@@ -110,3 +109,5 @@ CreateThread(function()
 		SetBlipAsShortRange(blip, true)
 	end
 end)
+
+print('Wystartowanie Skrytpu zakończone suckesem')
