@@ -1,5 +1,6 @@
 Config                            = {}
 
+
 Config.Blipy = {
 	{
 		Pos     = vector3(-537.4, -176.97, 38.22),
